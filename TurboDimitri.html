@@ -3,15 +3,26 @@
     <head> 
         <title>TurboDimitri</title>
         <meta charset="utf-8">
+        <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Font+Name">
         <link rel="stylesheet" href="mon_css.css">
          <script src="https://randojs.com/1.0.0.js"></script>
+         <script>
+            function sleep(milliseconds) {
+              const date = Date.now();
+              let currentDate = null;
+              do {
+                currentDate = Date.now();
+              } while (currentDate - date < milliseconds);
+            }
+         </script>
          
     </head>
-    <body style="background-color:#a019d1;text-align: center;" onload="values()">
+    <body style="background-color:#a019d1;text-align: center; position: relative;" onload="values()">
         <h1 id="homepage" style="color:blanchedalmond;font-size: 60px; font-weight: bolder;">Bienvenue sur mon site !!!</h1>
         <p style="font-size: 40px; font-weight: bolder;">
             Je suis ravi que tes trajets des internet t'ai amené jusqu'à chez moi, ici tu trouvera :
-            <ul >
+            <ul style="list-style: none;">
                 <li id="text0"> Ma chaîne youtube <a href="https://youtube.com/@TurboDimitri">ici</a></li>
                 <li id="text1"> La page où j'apprends le html : <a href="HTML_Tutos.html">HTML_Tutos</a></li>
                 <li id="text2"> La page sur le <a href="houmous/tp5.html">houmous</a> que j'ai faite en L2</li>
@@ -36,22 +47,57 @@
                     let p = document.getElementById('text'+i);
                     
                     p.setAttribute('class', '');
-            
+                        
                     let randomSelection = 
                         classesArr[ Math.ceil(Math.random()*classesArr.length - 1) ];
                     console.log(randomSelection);
-                    p.setAttribute('class', randomSelection);
+                    if((randomSelection.split("_")[1])%2==0){
+                    p.setAttribute('class', randomSelection + " even");
+                    }else{
+                        p.setAttribute('class', randomSelection)
+                    }
                 };
                 function aux(){
                     for(let i= 0; i<5;i++){
                         addRandomClasses(i)
                     }
                 }
-                setInterval(function(){ aux() }, 2000);
+                bool= true
+                ClickCounter =0
+                aux()
+                setInterval(function(){ if(bool){aux()} }, 2000);
+                const changeValue = () => {
+                    ClickCounter++
+                    bool = !bool
+                    if(!bool){
+                        console.log(bool)
+                        document.getElementById("content pas content").src ="moipaconten.jpg";
+                            if(ClickCounter < 2){
+                            setTimeout(function(){
+                            alert("REMET LE TEXTE QUI BOUGE CA ME DETENDS !!!");
+                            },500)
+                            document.getElementById("gerbille").className ="merci"
+                            document.getElementById("gerbille").src ="merci.png"
+                            
+                        }
+                    }else{
+                        console.log(bool)
+                        document.getElementById("content pas content").src ="photo2mwa.jpg";
+                        if(ClickCounter < 3){
+                            setTimeout(function(){
+                            alert("Youpi !!! c'est Noël tout les jours ici");
+                            },500)
+                            document.getElementById("gerbille").parentNode .removeChild(document.getElementById("gerbille"));
+                        }
+                    }
+                    
+                    
+                }
                 
             
               </script>  
-            <img src="photo2mwa.jpg" width="480" height="480" alt="Une photo de moi un peu goofy">
-
+            <button onclick="changeValue()"><img id="content pas content"src="photo2mwa.jpg" width="480" height="480" alt="Une photo de moi un peu goofy"/></button>
+            <img id="gerbille" src="rat_ninja.png"
+                class="gerbille">
     </body>
 </html>

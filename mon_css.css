@@ -1,17 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Smokum&display=swap");
+
 .style_0{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Audiowide";
     font-size: 30px; font-weight: bolder;
+    
     
     
 }
 .style_1{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px; font-weight: bolder;
+   
     
 }
 .style_2{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Smokum";
     font-size: 30px; font-weight: bolder;
+    color:azure
     
 }
 .style_3{
@@ -53,4 +59,25 @@
     font-family: fantasy;
     font-size: 30px; font-weight: bolder;
     
+}
+
+button{
+    background-color:aqua;
+    padding: 0%;
+}
+.merci{
+    position:absolute;
+    width:220px;
+    height:220px;
+    top:700px;
+    right:200px;
+    padding: 0%;    
+}
+.gerbille{
+    position:absolute;
+    width:500px;
+    height:500px;
+    top:390px;
+    right:0;
+    padding: 0%;
 }
