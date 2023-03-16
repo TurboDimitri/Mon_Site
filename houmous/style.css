@@ -1,0 +1,26 @@
+a{
+    color: red;
+}
+
+a:visited{
+    color: grey;
+}
+
+a:hover{
+    color: blueviolet;
+}
+
+p{
+    font-style: normal;
+}
+
+.warning{
+    color: red;
+}
+
+.waldo:hover{
+    color: rgb(255, 0, 200);
+}
+.ingredient{
+    visibility: hidden;
+}
